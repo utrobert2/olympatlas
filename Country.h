@@ -6,8 +6,8 @@
 #include "SFMLUtilities.h"
 using namespace std;
 
-//country class to store country information
-//used in continent class 
+// Class Country qui affiche les infos du pays
+// Est utilisée dans la classe Continent
 class Country {
 private:
     string name;
