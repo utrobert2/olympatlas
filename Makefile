@@ -1,8 +1,6 @@
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall
 SFMLFLAGS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
-
-# Define the executable file
 EXEC = myGame
 SRC = main.cpp
 

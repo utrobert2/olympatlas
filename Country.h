@@ -14,19 +14,21 @@ private:
     string population;
     string area;
     int olympicMedalsWon;
+    int firstParticipation;
     sf::Texture flagTexture;
     sf::Sprite flagSprite;
 
 public:
-    Country(const string& countryName, string countryPopulation, string countryArea, int medalsWon, string path) {
+    Country(const string& countryName, string countryPopulation, string countryArea, int medalsWon, int firstPart, string path) {
         name = countryName;
         population = countryPopulation;
         area = countryArea;
         olympicMedalsWon = medalsWon;
+        firstParticipation = firstPart;
         flagTexture.loadFromFile(path);
         flagSprite.setTexture(flagTexture);
         flagSprite.setScale(2, 2);
-        flagSprite.setPosition(490, 215);
+        flagSprite.setPosition(490, 180);
     }
 
     //getter functions
@@ -47,7 +49,8 @@ public:
         sfmlUtilities.drawInfoBackground();
         sfmlUtilities.drawFlagSprite(flagSprite);
         sfmlUtilities.drawText("\t\t\t\t\t\t\t\t\tCountry: " + name + "\n\t\t\t\t\t\t\t\t\tPopulation: " + population +
-            "\n\t\t\t\t\t\t\t\t\tArea: " + area + " sq km " + "\n\t\t\t\t\t\t\t\tOlympic Medals Won: " + std::to_string(olympicMedalsWon), x, y);
+            "\n\t\t\t\t\t\t\t\t\tArea: " + area + " sq km " + "\n\t\t\t\t\t\t\t\t\tOlympic Medals Won: " + std::to_string(olympicMedalsWon) + 
+            "\n\t\t\t\t\t\t\t\t\tFirst participation: " + std::to_string(firstParticipation), x, y);
     }
 
     ~Country() = default;

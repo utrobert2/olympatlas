@@ -22,7 +22,7 @@ private:
 
 
 public:
-    SFMLUtilities() : window(sf::VideoMode(1280, 720), "WorldMap") {
+    SFMLUtilities() : window(sf::VideoMode(1280, 720), "OlympAtlas") {
 
     }
 
@@ -325,17 +325,7 @@ public:
         rectangle.setFillColor(sf::Color::Blue);
         asiaRects.push_back(rectangle);
 
-        // Parcourir la liste asiaRects
-for (const auto& rect : asiaRects) {
-    // Obtenir les limites du rectangle
-    sf::FloatRect bounds = rect.getGlobalBounds();
 
-    // Imprimer les informations du rectangle
-    std::cout << "Rectangle: x=" << bounds.left
-              << ", y=" << bounds.top
-              << ", width=" << bounds.width
-              << ", height=" << bounds.height << std::endl;
-}
     }
 
     void setAfricaRects() {
@@ -678,7 +668,7 @@ for (const auto& rect : asiaRects) {
                     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 
                     // Verifie si le clic de la souris est à l'intérieur de l'un des rectangles
-                    for (int i = 0; i < continentRects.size(); ++i) {
+                    for (u_int i = 0; i < continentRects.size(); ++i) {
                         sf::FloatRect rectBounds = continentRects[i].getGlobalBounds();
                         if (rectBounds.contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                             mouseclick += 1;
@@ -691,7 +681,7 @@ for (const auto& rect : asiaRects) {
                     if (selectedContinentIndex == 0) {
                         sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 
-                        for (int i = 0; i < asiaRects.size(); ++i) {
+                        for (u_int i = 0; i < asiaRects.size(); ++i) {
                             sf::FloatRect rectBounds = asiaRects[i].getGlobalBounds();
                             if (rectBounds.contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                                 mouseclick += 1;
@@ -703,7 +693,7 @@ for (const auto& rect : asiaRects) {
                     else if (selectedContinentIndex == 1) {
                         sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 
-                        for (int i = 0; i < europeRects.size(); ++i) {
+                        for (u_int i = 0; i < europeRects.size(); ++i) {
                             sf::FloatRect rectBounds = europeRects[i].getGlobalBounds();
                             if (rectBounds.contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                                 mouseclick += 1;
@@ -715,7 +705,7 @@ for (const auto& rect : asiaRects) {
                     else if (selectedContinentIndex == 2) {
                         sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 
-                        for (int i = 0; i < africaRects.size(); ++i) {
+                        for (u_int i = 0; i < africaRects.size(); ++i) {
                             sf::FloatRect rectBounds = africaRects[i].getGlobalBounds();
                             if (rectBounds.contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                                 mouseclick += 1;
@@ -727,7 +717,7 @@ for (const auto& rect : asiaRects) {
                     else if (selectedContinentIndex == 3) {
                         sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 
-                        for (int i = 0; i < northAmericaRects.size(); ++i) {
+                        for (u_int i = 0; i < northAmericaRects.size(); ++i) {
                             sf::FloatRect rectBounds = northAmericaRects[i].getGlobalBounds();
                             if (rectBounds.contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                                 mouseclick += 1;
@@ -739,7 +729,7 @@ for (const auto& rect : asiaRects) {
                     else if (selectedContinentIndex == 4) {
                         sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 
-                        for (int i = 0; i < southAmericaRects.size(); ++i) {
+                        for (u_int i = 0; i < southAmericaRects.size(); ++i) {
                             sf::FloatRect rectBounds = southAmericaRects[i].getGlobalBounds();
                             if (rectBounds.contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                                 mouseclick += 1;
@@ -751,7 +741,7 @@ for (const auto& rect : asiaRects) {
                     else if (selectedContinentIndex == 5) {
                         sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 
-                        for (int i = 0; i < oceaniaRects.size(); ++i) {
+                        for (u_int i = 0; i < oceaniaRects.size(); ++i) {
                             sf::FloatRect rectBounds = oceaniaRects[i].getGlobalBounds();
                             if (rectBounds.contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
                                 mouseclick += 1;

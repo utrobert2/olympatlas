@@ -13,12 +13,12 @@ private:
 
 public:
     ContinentMap(string name, string filepath) : Continent(name) {
-        SFMLUtilities sfmlUtilities;
+        SFMLUtilities   sfmlUtilities;
         mapTexture.loadFromFile(filepath);
         mapSprite.setTexture(mapTexture);
     }
 
-    // afficher la carte du continent 
+    // Afficher la carte du continent 
     void display(SFMLUtilities& sfmlUtilities, float x, float y) {
         sfmlUtilities.drawNorthAmericaRects();
         sfmlUtilities.drawSouthAmericaRects();
@@ -29,7 +29,7 @@ public:
         sfmlUtilities.drawSprite(mapSprite);
     }
 
-    //display country information
+    // Affichher les infos du pays
     void draw(SFMLUtilities& sfmlUtilities, float x, float y, int z) {
         vector<Country*> countries = getCountries();
         countries[z]->draw(sfmlUtilities, x, y);
